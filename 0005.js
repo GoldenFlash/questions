@@ -2,7 +2,7 @@
 // 1）输入日期2016-02-01，返回结果为2-1，表示2016年2月1日属于2月的第一周；
 // 2）输入日期2016-09-01，返回结果为8-5，表示2016年9月1日属于8月的第五周。
 
-function which(time){
+function whichDay(time){
 	var time = new Date(time);
 	var date = time.getDate();
 	var month= 1;
@@ -15,10 +15,10 @@ function which(time){
 	}else{
 		end = weekday
 	}
-	var a = date%7
+	var remain = date%7
 	var year = time.getFullYear();
-	if(date>7){
-		if(a<weekday){
+	if(date>=7){
+		if(remain<weekday){
 			week = Math.floor(date/7)
 			
 		}else{
@@ -27,7 +27,7 @@ function which(time){
 		}
 		month = time.getMonth()+1;
 	}else if(date<7){
-		if(a<weekday){
+		if(remain<weekday){
 			week = Math.floor(date/7)+5
 			month = time.getMonth();
 		}else{
@@ -38,4 +38,5 @@ function which(time){
 	console.log(year+"第"+month+"月"+"第"+week+"周"+"星期"+end)
 
 }
-which("2017-12-1")
+whichDay("2016-02-01")
+whichDay("2016-09-01")
