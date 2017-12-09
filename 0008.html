@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+ 	<meta charset="UTF-8">
+ 	<title>Document</title>
+ </head>
+ <body>
+ 	<ul id="list" class="foo">
+	  <li>#0</li>
+	  <li>#1</li>
+	  <li>#2</li>
+	  <li>#3</li>
+	  <li>#4</li>
+	  <li>#99998</li>
+	  <li>#99999</li>
+	  <li>#100000</li>
+ 	</ul>
+ 	为 <ul> 添加一个类 bar 删除第 10 个 <li>
+  	在第 500 个 <li> 后面增加一个 <li> , 其文字内容为 <v2ex.com />
+	点击任意 <li> 弹窗显示其为当前列表中的第几项。
+	要求：使用原生JS
+<script type="text/javascript">
+	var list = document.querySelector('.foo');
+	var li= document.querySelectorAll('li');
+	// list.classList.add('bar')
+	var childNode = list.childNodes
+	var childNode = list.children
+	console.log(childNode)
+	// var node10 = list.childNodes[10]
+	// list.removeChild(node10);
+	// var li = document.createElement('li')
+	// li.innerText = 'v2ex.com'
+	// list.insertBefore(li,list.childNodes[501])
+	list.addEventListener('click',function(e){
+		console.log(e.target)
+		console.log(li)
+		alert([].indexOf.apply(childNode,[e.target]))
+	})
+</script>
+ </body>
+ </html> 
+   	
