@@ -17,46 +17,31 @@
 		var btn1 = document.querySelector('#btn1');
 		var btn2 = document.querySelector('#btn2');
 		var input = document.querySelector('input');
-		// const promise =Promise.resolve();
-		// btn1.onclick = function(){
-		// 	promise.then(function(){
-		// 		setTimeout(function(){
-		// 			input.value = 'btn1';
-					
-		// 		},2000)
-		// 	}).then(function(){
-		// 		setTimeout(function(){
-		// 			input.value = 'btn2';
-					
-		// 		},1000)	
-		// 	});
-		// };
-		// btn2.onclick = function(){
-		// 	promise.then(function(){
-		// 		setTimeout(function(){
-		// 			input.value = 'btn2';
-		// 		},1000)
-		// 	})
+		// function addQueue(queueArray,callback){
+		// 	var object  = {};
+		// 	object.callback = callback
 		// }
-		// var queen = [];
-		// btn1.onclick = function(){
-		// 	var o = {};
-		// 	o.callback = function(){
-		// 		input.value = 'btn1'
-		// 	}
-		// 	queen.push(o)
-		// 	var callback = queen
-		// }
-		// btn1.onclick = function(){
-		// 	var timer1 = setTimeout(function(){
-		// 		input.value = 'btn1';
-					
-		// },2000)
-		// var timer2 = setTimeout(function(){
-		// 		input.value = 'btn2';
-					
-		// },1000)
-		// }
+		var promise = Promise.resolve(1);
+		var a= 1;
+		btn1.onclick = function(){
+			promise.then(function(args){
+				console.log(a);
+				for(var i=0;i<1000000000;i++){
+					a++
+					if(a==1000000000){
+						console.log('first'+':'+a)
+					}
+				}				// console.log(a);
+				
+			}).then(function(args){
+				console.log(a) 
+			})
+		};
+		btn2.onclick = function(){
+			promise.then(function(args){
+				console.log('last'+':'+a)
+			})
+		}
 
 	</script>
 </body>
